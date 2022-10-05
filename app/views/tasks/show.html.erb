@@ -1,8 +1,14 @@
-<h1>Task details:</h1>
-<h2><%= @task.title %></h2>
-<h3>Details:<%= @task.details %></h3>
-<h3>Status: <%= @task.completed ? "completed" : "not completed" %></h3>
+<div class="card">
+  <div class="card-header">
+    <h1>Task details:</h1>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title"><%= @task.title %></h2>
+    <p class="card-text"><strong>Details: </strong><%= @task.details %></p>
+    <p><strong>Status:</strong> <%= @task.completed ? "completed" : "not completed" %></p>
 
-<h3><%= link_to "Editar", edit_task_path %></h3>
-<h3><%= link_to "Borrar", destroy_task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></h3>
-<h3><%= link_to "Volver al listado", tasks_path %></h3>
+    <a><%= link_to "Editar", edit_task_path %></a>
+    <a><%= link_to "Borrar", destroy_task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %></a>
+    <a><%= link_to "Volver al listado", tasks_path %></a>
+  </div>
+</div>

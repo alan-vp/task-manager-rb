@@ -1,6 +1,12 @@
-<h1>List of all the tasks:</h1>
-<ul><% @tasks.each do |task| %></ul>
-  <% status = task.completed ? "[x]" : "[  ]"  %>
-  <li><%= status %> <%= link_to task.title, task_path(task) %></li>
-<% end %>
-<h3><%= link_to "Create a new Task", new_task_path %></h3>
+<div class="card">
+  <h1 class="card-header">List of all the tasks:</h1>
+ <div class="card-body">
+    <ul><% @tasks.each do |task| %></ul>
+      <% status = task.completed ? "[x]" : "[  ]"  %>
+      <div>
+        <li><%= status %> <%= link_to task.title, task_path(task) %></li>
+      </div>
+    <% end %>
+    <a><%= link_to "Create a new Task", new_task_path %></a>
+  </div>
+</div>
